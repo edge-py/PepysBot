@@ -9,12 +9,7 @@ def send_welcome(message):
 @bot.message_handler(regexp='цып')
 def send_photo(message):
     rand_pic_number = randint(1,3)
-    if rand_pic_number == 1:
-        bot.send_photo(chat_id = message.from_user.id, photo = 'https://www.thespruce.com/thmb/xInH0eEZfVPlI03RrQuIdH7SqHU=/2056x1156/smart/filters:no_upscale()/Babychick-GettyImages-171143554-5911e8d63df78c92838d4b8c.jpg')
-    if rand_pic_number == 2:
-        bot.send_photo(chat_id = message.from_user.id, photo = 'https://www.almanac.com/sites/default/files/image_nodes/chick-close-up-grass-crop.jpg')
-    if rand_pic_number == 3:
-        bot.send_photo(chat_id = message.from_user.id, photo = 'https://io.dropinblog.com/uploaded/blogs/34240663/files/featured/how_to_raise_chicks.png')
+    bot.send_photo(chat_id = message.from_user.id, photo = ph_chick_list[rand_pic_number])
     bot.send_message(chat_id = message.from_user.id, text=
     """
     Введи 'цыпленок' или 'утенок':
@@ -26,13 +21,7 @@ def send_photo(message):
 @bot.message_handler(regexp='ут')
 def send_photo(message):
     rand_pic_number = randint(1,3)
-    if rand_pic_number == 1:
-        bot.send_photo(chat_id = message.from_user.id, photo = 'https://i1.sndcdn.com/avatars-lwk0Z72RsFjizU65-n4Lwtw-t500x500.jpg')
-    if rand_pic_number == 2:
-        bot.send_photo(chat_id = message.from_user.id, photo = 'https://images-na.ssl-images-amazon.com/images/I/51GMyFonPXL._AC_SL1000_.jpg')
-    if rand_pic_number == 3:
-        bot.send_photo(chat_id = message.from_user.id, photo = 'https://www.adweek.com/wp-content/uploads/2019/01/disney-duckling-aod-hed-page-2019.jpg')
-    
+    bot.send_photo(chat_id = message.from_user.id, photo = ph_duck_list[rand_pic_number])
     bot.send_message(chat_id = message.from_user.id, text=
     """
     Введи 'цыпленок' или 'утенок':
